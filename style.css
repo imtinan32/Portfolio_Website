@@ -443,7 +443,7 @@ form textarea {
     }
 }
 
-@media (max-width: 786px) {
+@media (max-width: 768px) {
     :root {
         --big-font: 2.4rem;
         --medium-font: 1.2rem;
@@ -451,6 +451,9 @@ form textarea {
 
     header {
         padding: 11px 4%;
+        display: flex; /* Use flexbox for header layout */
+        justify-content: space-between; /* Align items horizontally */
+        align-items: center; /* Align items vertically */
     }
 
     #menu-icon {
@@ -461,16 +464,17 @@ form textarea {
     header .navbar {
         position: absolute;
         left: 0;
-        top: -550px;
+        top: -500px;
         right: 0;
         display: flex;
         flex-direction: column;
         background: var(--bg-color);
-        box-shadow: 0 4px 4px rgba(0 0 0 / 100%);
-        transition: 0.3s;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); /* Use rgba for the box shadow */
+        transition: 0.3s; /* Slightly longer transition for smoother effect */
+        width: 100%; /* Adjust the width to fill the screen */
     }
 
-    .navbar .active {
+    .navbar.active {
         top: 100%;
     }
 
@@ -486,7 +490,77 @@ form textarea {
         right: 2rem;
     }
 
-    scroll-down {
+    .scroll-down {
         display: none;
     }
+
+    .home {
+        display: flex; /* Use flexbox for home layout */
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items horizontally */
+        text-align: center;
+    }
+
+    .home-text {
+        width: 100%;
+        padding: 1.4rem;
+    }
+
+    .home-img {
+        order: initial;
+        width: 100%;
+    }
+
+    .about-container {
+        display: flex; /* Use flexbox for about-container layout */
+        justify-content: center; /* Center items horizontally */
+    }
+
+    .about-img {
+        display: flex; /* Use flexbox for about-img layout */
+        justify-content: center; /* Center items horizontally */
+    }
+
+    .skills-container {
+        display: flex; /* Use flexbox for skills-container layout */
+        justify-content: center; /* Center items horizontally */
+    }
+
+    .skills-img {
+        padding-top: 2rem;
+        display: flex; /* Use flexbox for skills-img layout */
+        justify-content: center; /* Center items horizontally */
+    }
+
+    .contact-form form {
+        width: 300px;
+        margin: 0 auto; /* Center the contact form horizontally */
+    }
+
+    .contact-button {
+        margin-left: 0; /* Reset the margin for the contact button */
+    }
+}
+@media (max-width: 340px) {
+   :root{
+    --big-font: 1.7rem;
+    --medium-font: 1.1rem;
+   }
+   .home-text span{
+         font-size: 1rem;
+   }
+   .home-text h2{
+    font-size: 0.9rem;
+    font-weight:500;
+   }
+   .information .info-box span{
+    font-size: 1rem;
+   }
+   .contact-form form{
+    width: 250px;
+   }
+    .contact-button{
+     width: 20%;
+    }
+
 }
